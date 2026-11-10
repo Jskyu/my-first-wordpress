@@ -1,0 +1,335 @@
+/*
+Theme Name: My First WordPress
+Theme URI: https://example.com
+Author: My First WordPress
+Author URI: https://example.com
+Description: 성능 최적화 및 UX 개선이 적용된 WordPress 테마. 빠른 로딩 속도, 직관적인 네비게이션, 완벽한 반응형 디자인을 제공합니다.
+Version: 1.0.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: my-first-wordpress
+Tags: responsive, modern, performance, accessibility
+*/
+
+/* ==========================================================================
+   Base Styles - Critical CSS Only
+   ========================================================================== */
+
+:root {
+  --primary-color: #E31E24;
+  --primary-dark: #B01419;
+  --secondary-color: #1A1A1A;
+  --text-color: #333333;
+  --text-light: #6B7280;
+  --light-gray: #F9FAFB;
+  --border-color: #E5E7EB;
+  --white: #FFFFFF;
+  --max-width: 1280px;
+  --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  line-height: 1.65;
+  color: var(--text-color);
+  background-color: var(--white);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-size: 16px;
+  letter-spacing: -0.011em;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  color: var(--primary-color);
+  text-decoration: none;
+  transition: color var(--transition);
+}
+
+a:hover {
+  color: #b83228;
+}
+
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Skip to Content - Accessibility */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: var(--primary-color);
+  color: white;
+  padding: 8px 16px;
+  z-index: 100;
+}
+
+.skip-link:focus {
+  top: 0;
+}
+
+/* Header Styles */
+.site-header {
+  background: var(--white);
+  border-bottom: 1px solid var(--border-color);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  transition: all var(--transition);
+  backdrop-filter: blur(10px);
+  background-color: rgba(255, 255, 255, 0.95);
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.25rem 2rem;
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.site-branding {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.site-logo img {
+  height: 50px;
+  width: auto;
+}
+
+.site-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--secondary-color);
+  margin: 0;
+  letter-spacing: -0.02em;
+}
+
+/* Simplified Navigation - 문제점 해결: 복잡한 네비게이션 단순화 */
+.main-navigation {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.main-navigation ul {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+  margin: 0;
+  padding: 0;
+}
+
+.main-navigation a {
+  color: var(--text-color);
+  font-weight: 500;
+  padding: 0.5rem 0;
+  position: relative;
+  transition: color var(--transition);
+  font-size: 0.9375rem;
+  letter-spacing: -0.011em;
+}
+
+.main-navigation a:hover,
+.main-navigation a:focus {
+  color: var(--primary-color);
+}
+
+.main-navigation a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--primary-color);
+  transition: width var(--transition);
+}
+
+.main-navigation a:hover::after {
+  width: 100%;
+}
+
+/* Mobile Menu Toggle */
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: var(--text-color);
+  padding: 0.5rem;
+}
+
+/* Main Content */
+.site-main {
+  min-height: 60vh;
+  padding: 3rem 0;
+}
+
+/* Footer */
+.site-footer {
+  background: var(--secondary-color);
+  color: #ffffff;
+  padding: 3rem 0 1.5rem;
+  margin-top: 4rem;
+}
+
+.footer-widgets {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.footer-widget h3 {
+  margin-bottom: 1rem;
+  color: #ffffff;
+}
+
+.footer-widget ul {
+  list-style: none;
+}
+
+.footer-widget a {
+  color: rgba(255,255,255,0.8);
+}
+
+.footer-widget a:hover {
+  color: #ffffff;
+}
+
+.site-info {
+  text-align: center;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  font-size: 0.9rem;
+  color: rgba(255,255,255,0.7);
+}
+
+/* ==========================================================================
+   Responsive Design - 모바일 최적화 개선
+   ========================================================================== */
+
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  .main-navigation {
+    position: fixed;
+    top: 70px;
+    left: -100%;
+    width: 100%;
+    height: calc(100vh - 70px);
+    background: #ffffff;
+    flex-direction: column;
+    padding: 2rem;
+    transition: left var(--transition);
+    box-shadow: 2px 0 10px rgba(0,0,0,0.1);
+  }
+
+  .main-navigation.toggled {
+    left: 0;
+  }
+
+  .main-navigation ul {
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+  }
+
+  .main-navigation a {
+    display: block;
+    padding: 1rem 0;
+    font-size: 1.1rem;
+    border-bottom: 1px solid var(--border-color);
+  }
+
+  .site-title {
+    font-size: 1.2rem;
+  }
+
+  .site-logo img {
+    height: 40px;
+  }
+
+  .footer-widgets {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Tablet */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .main-navigation ul {
+    gap: 1.5rem;
+  }
+
+  .header-container {
+    padding: 1rem 20px;
+  }
+}
+
+/* Large Screens */
+@media (min-width: 1400px) {
+  :root {
+    --max-width: 1400px;
+  }
+}
+
+/* ==========================================================================
+   Utility Classes
+   ========================================================================== */
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.loading {
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+/* Print Styles */
+@media print {
+  .site-header,
+  .site-footer,
+  .menu-toggle,
+  .skip-link {
+    display: none;
+  }
+}

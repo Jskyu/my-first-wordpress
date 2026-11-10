@@ -1,0 +1,33 @@
+# Screenshot Information
+
+WordPress 테마는 screenshot.png 파일이 필요합니다.
+
+## 요구사항
+- 파일명: screenshot.png
+- 크기: 1200x900px (4:3 비율)
+- 형식: PNG
+
+## 생성 방법
+
+1. **직접 생성**
+   - 홈페이지 스크린샷 캡처
+   - 1200x900px로 리사이즈
+   - `screenshot.png`로 저장
+
+2. **온라인 도구 사용**
+   - https://www.canva.com
+   - 1200x900px 캔버스 생성
+   - 테마 미리보기 디자인
+   - PNG로 다운로드
+
+3. **자동 생성 (개발 중)**
+   - WordPress 관리자 패널에서 테마 미리보기 자동 생성
+
+## 임시 해결책
+
+screenshot.png 없이도 테마는 정상 작동합니다.
+단, WordPress 테마 목록에서 기본 플레이스홀더 이미지가 표시됩니다.
+
+## 위치
+이 파일을 다음 위치에 저장하세요:
+`wp-content/themes/my-first-wordpress/screenshot.png`

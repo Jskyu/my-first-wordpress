@@ -1,0 +1,15 @@
+# WordPress
+wp-content/uploads/
+wp-content/cache/
+wp-content/backup/
+wp-content/advanced-cache.php
+wp-content/wp-cache-config.php
+
+# Theme build files
+node_modules/
+*.log
+.DS_Store
+Thumbs.db
+
+# Environment
+.env
